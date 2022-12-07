@@ -1,10 +1,8 @@
 import React from "react";
-
 import Button from '@mui/material/Button';
-import { Form } from "react-router-dom";
-//import { useForm } from 'react-hook-form';
-//<Button >Show Students</Button>
 import { useState } from 'react';
+import AllStu from "./Current S/AllStu";
+
 
 
   
@@ -12,42 +10,26 @@ import { useState } from 'react';
     const[Modal, setModal]=useState(false);
     const toggleModal=()=>{
         setModal(!Modal);
-
          };
 
-if(Modal){
-  document.body.classList.add('active-modal')
-}
-else{
-  document.body.classList.remove('active-modal')
-}
+    if(Modal){
+    document.body.classList.add('active-modal')
+            }
+    else{
+    document.body.classList.remove('active-modal')
+        }
 
-
-         return ( 
+return ( 
           <>
-          <div>
-            <div>
-            <div>
-              <h1>
-                Here is your Student Page
-              </h1>
-            </div>
-            <div> <p id="add">
-              
-        <Button className="btn-Modal" variant="contained" align ="center" size="45" onClick={toggleModal}> Add New Student </Button>
-         </p></div>
-
-         <div> <p id="show">
-            
-              <Button className="Show-Modal" variant="contained" align ="center" size="45"> Show Students </Button>
-          `   </p>`</div>
-
-
-
-
-
-          </div>
+         <div> 
+          <h2 align="center">Hello Nisal Perera, Here is Your Students' Details Upto Now</h2></div>
+          `   <div>
+            <AllStu/>
+            <div>    
+        <Button className="btn-Modal" variant="contained" onClick={toggleModal}> Add New Student </Button>
          </div>
+            </div>
+         
       {Modal && (
 <div className="Modal">
 <div onClick={toggleModal} className="overlay"></div>  
@@ -67,22 +49,10 @@ else{
         <input type="text" />
         </label>
  
-
-
-
-
-
-
-
-
-
-    
-    </form>
-
-      <button className="close-modal"  onClick={toggleModal}>
-              
-              CLOSE
-            </button>
+    </form><br></br>
+      <Button className="close-modal" color="error" variant= "outlined" onClick={toggleModal}>CLOSE</Button>
+      <></>
+      <Button className="close-modal" variant="outlined" type="submit">Submit</Button>
           </div>
         </div>
       )}

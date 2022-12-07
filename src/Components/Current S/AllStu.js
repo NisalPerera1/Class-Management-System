@@ -1,3 +1,8 @@
+import React from "react"
+
+  function AllStu(){
+
+return(
 <table border={2} align={"center"}>
        <tr>
           <th>Name</th>
@@ -70,3 +75,7 @@
         </tr>
 
     </table> 
+)
+
+};
+export default AllStu;
