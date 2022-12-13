@@ -1,19 +1,17 @@
 import React from "react";
 import Button from '@mui/material/Button';
 import { useState } from 'react';
-import AllStu from "./Current S/AllStu";
-import { Group } from "@mui/icons-material";
+import { CenterFocusStrong } from "@mui/icons-material";
 
 
 
-  
-  function Modal(){
-    const[Modal, setModal]=useState(false);
+  function Students(){
+    const[Students, setStudents]=useState(false);
     const toggleModal=()=>{
-        setModal(!Modal);
+        setStudents(!Students);
          };
 
-    if(Modal){
+    if(Students){
     document.body.classList.add('active-modal')
             }
     else{
@@ -25,13 +23,15 @@ return (
          <div> 
           <h2 align="center">Hello Nisal Perera, Here is Your Students' Details Upto Now</h2></div>
           `   <div>
-            <AllStu/>
-            <div>    
+            
+            <div id="Buton" >    
         <Button className="btn-Modal" variant="contained" onClick={toggleModal}> Add New Student </Button>
+		<sp>  or  </sp>
+		<Button className="btn-Modal" variant="contained" onClick={toggleModal}> Show All Student </Button>
          </div>
             </div>
          
-      {Modal && (
+      {Students && (
 <div className="Modal">
 <div onClick={toggleModal} className="overlay"></div>  
   <div className="Modal-content">
@@ -69,4 +69,4 @@ return (
    </>
   );
 };
-   export default Modal;
+   export default Students;

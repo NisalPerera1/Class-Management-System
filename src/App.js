@@ -1,20 +1,28 @@
+import React from 'react';
 import './App.css';
-import Home from './Components/Home';
-import { BrowserRouter } from "react-router-dom";
-import Modal from './Components/Student';
-import { BrowserRouter as Router,Switch,Redirect, Routes, Route,Navigate } from "react-router-dom";
-//import NavBar from './Components/NavBar';
-import LineChart from './Components/LineChart';
+import Navbar from './Components/Navbar/';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/home';
+import About from './pages/about';
+import Events from './pages/events';
+import AnnualReport from './pages/feereport';
+import Students from './pages/students';
+
 
 
 function App() {
-  return (
-   
-   <div>
-    <Modal/>
-  
-   </div> 
-  );
+return (
+	<Router>
+	<Navbar/>
+	<Routes>
+		<Route path='/' exact element={<Home/>} />
+		<Route path='/about' element={<About/>} />
+		<Route path='/students' element={<Students/>} />
+		
+	
+	</Routes>
+	</Router>
+);
 }
 
 export default App;
