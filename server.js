@@ -1,6 +1,18 @@
 const express = require('express');
+const mongoose =require ('mongoose');
+const bodyParser=require('body-parser'); //information (json walin ) ena req eka converting to javascript object 
+var https = require('https');
 const app = express();
-const mongoose =require ('mongoose')
+//importing routes 
+const postRoutes=require('./routes/posts');
+
+
+//app midleware
+app.use(bodyParser.json());
+
+//route middleware
+app.use(postRoutes);
+
 const PORT = 8000;
 const DB_URL="mongodb+srv://Nisal:Nisal12345@classsmansy.kt8c5al.mongodb.net/?retryWrites=true&w=majority";
 mongoose.set('strictQuery', true);
