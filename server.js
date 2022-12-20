@@ -3,13 +3,15 @@ const mongoose =require ('mongoose');
 const bodyParser=require('body-parser'); //information (json walin ) ena req eka converting to javascript object 
 var https = require('https');
 const app = express();
+//back end eka 8000 wala front eka 3000 wala hinda security walin error ekak enawa.cors walin error eka fix karnawa 
+const cors=require('cors');
 //importing routes 
 const postRoutes=require('./routes/posts');
 
 
 //app midleware
 app.use(bodyParser.json());
-
+app.use(cors)
 //route middleware
 app.use(postRoutes);
 
