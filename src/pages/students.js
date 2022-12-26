@@ -21,12 +21,12 @@ import { CenterFocusStrong } from "@mui/icons-material";
 return ( 
           <>
          <div> 
-          <h2 align="center">Hello Nisal Perera, Here is Your Students' Details Upto Now</h2></div>
+          <h2 align="center">Here is Your Students' Details Upto Now</h2></div>
           `   <div>
             
             <div id="Buton" >    
         <Button className="btn-Modal" variant="contained" onClick={toggleModal}> Add New Student </Button>
-		<sp>  or  </sp>
+		<p></p>
 		<Button className="btn-Modal" variant="contained" onClick={toggleModal}> Show All Student </Button>
          </div>
             </div>

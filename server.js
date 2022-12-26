@@ -8,6 +8,9 @@ const cors=require('cors');
 //importing routes 
 const postRoutes=require('./routes/posts');
 
+//axios package eka use kara frontend back end connect karanna
+//fetch api eka gannath puluwan
+
 
 //app midleware
 app.use(bodyParser.json());

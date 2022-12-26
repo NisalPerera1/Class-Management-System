@@ -1,21 +1,45 @@
 import React from 'react';
-import Button from '@mui/material/Button';
+
+
+import {AiFillLinkedin, AiFillGithub, AiFillMail, AiFillEnvironment, AiFillPhone} from 'react-icons/ai';
+import pic from './1.jpg';
+
 
 const About = () => {
+   
+
 return (<div>
-	<h1 className="header" align="Center">Welcome To About Me Page</h1>
-<div>
+      
+                                <div id='image' align='center' >
+                              <img src={pic} layout="fill" height={300} weight={1234} align="center" />
+                               </div>
+      
 
-   <Button variant="contained">Total Students</Button>
-   <div>
+   <div id ="about-text">
 
-<div id="textarea"></div>
-<h1 align="center">Monthly Class Fees Status</h1>
-</div>
-</div>
+   <p align='center'>
+   I'm a self-learning, Adaptable and Enthusiastic Person. Student of Institute of Technology University of Moratuwa. 
+   A Second-Year Student of NDT IT.</p>  
+
+   </div>
 
 
-</div>
-)};
 
-export default About;
+   
+   <h1 className="header"  align="Center">Get In Contact </h1>
+
+   <div className='Icons' align='center'>
+          <AiFillLinkedin  size={50}/> 
+          <AiFillGithub size={50}/>
+         
+          <AiFillMail size={50}/>
+          <AiFillEnvironment size={50}/>
+          <AiFillPhone size={50}/>
+          
+        </div>
+   </div>
+
+
+   
+   
+)};export default About;

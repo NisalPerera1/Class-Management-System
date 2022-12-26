@@ -16,19 +16,19 @@ return (
 
 		<NavMenu>
 		<NavLink to='/' activeStyle>
-			Home
+			HOME
 		</NavLink>
 		<NavLink to='/classes' activeStyle>
-			Classes
+			YOUR CLASSES
 		</NavLink>
 		<NavLink to='/feereports' activeStyle>
-			Fee Report
+			PAYMENTS
 		</NavLink>
 		<NavLink to='/students' activeStyle>
-			Students
+			STUDENTS
 		</NavLink>
 		<NavLink to='/about' activeStyle>
-			About Me
+			ABOUT
 		</NavLink>
 		
 		
