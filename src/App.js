@@ -1,24 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import './App.css';
+import Navbar from './frontend/components/navbar/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Classes from './frontend/components/pages/classes/classes';
+import Home from './frontend/components/pages/home/home';
+import Getstudent from './frontend/components/pages/student/getstudent';
+import Addstudent from './frontend/components/pages/student/createstudent';
+import Editstudent from './frontend/components/pages/student/editstudent';
+
+import Contact from './frontend/components/pages/contact/contact';
+import About from './frontend/components/pages/about/about';
+import Papers from './frontend/components/pages/papers/SelectGrade'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div>
+  
+    
+    <Router>
+			<Navbar align="center"/>
+			<Routes>
+				<Route path='/' exact element={<Home/>} />
+				<Route path='/about' element={<About/>} />
+				<Route path='/classes' element={<Classes/>} />
+				<Route path='/contact' element={<Contact/>} />
+        		<Route path='/papers' element={<Papers/>} />
+        		<Route path='/students' element={<Getstudent/>} />
+        		<Route path='/student/add' element={<Addstudent/>} />
+
+				<Route path="update/:id" element={<Editstudent />} />
+
+			</Routes>
+			</Router>
+   </div>
+
+ 
+  
+  
   );
 }
 

@@ -1,0 +1,54 @@
+.contactfullpage{
+    background: url(https://w0.peakpx.com/wallpaper/140/372/HD-wallpaper-mix-colour-background.jpg) ;
+
+    position: absolute;
+  background-size: cover;            
+     background-position: center;
+    background-repeat: no-repeat;       
+    height: 100vh;
+    background-attachment: fixed;
+    
+}
+.head{
+  font-weight: bold;
+  text-align: center;
+  color: rgb(0, 0, 0);
+
+}
+
+.contact-form{
+    padding: 1 4rem 0 3rem;
+    display: contents;
+    height: 100;
+    margin-top: 5rem;
+      /* scroll */
+  padding-top: 3rem;
+}
+.para{
+  color: rgb(0, 0, 0);
+text-align: center;
+font-weight: bold;
+
+}
+
+textarea{
+    height: 4rem!important;
+}
+.form{
+   
+    padding: 1 4rem 0 3rem;
+    display: contents;
+    height: 100;
+    margin-top: 5rem;
+      /* scroll */
+  padding-top: 3rem;
+        
+   
+   
+      
+}
+ 
+body {
+    margin: 2;
+
+  }

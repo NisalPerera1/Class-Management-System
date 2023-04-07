@@ -1,0 +1,21 @@
+.btn-primary {
+    background-color: #1976d2;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    position: center;
+  }
+  
+  .btn-primary:hover {
+    background-color: #115293;
+  }
+
+  .btn-delete {
+    background-color: red;
+    color: white;
+  }
+
+  td button:first-child {
+    margin-right: 10px;
+  }
