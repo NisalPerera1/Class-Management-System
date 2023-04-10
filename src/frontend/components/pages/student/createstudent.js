@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Button } from "@mui/material";
 
 export default function Addstudent() {
   const [name, setName] = useState("");
@@ -17,7 +18,7 @@ export default function Addstudent() {
     }
 
    // backend posting
-axios.post("http://localhost:8070/Student/add", newStudent)
+axios.post("http://localhost:8070/students/add", newStudent)
 .then(() => {
   alert("Student saved in the database");
 })
@@ -71,7 +72,9 @@ axios.post("http://localhost:8070/Student/add", newStudent)
             onChange={(e) => setGender(e.target.value)}
           />
         </div><br></br>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>&nbsp;
+        <Button variant='danger' href='/students'> Back</Button>
+
       </form>
     </div>
   );

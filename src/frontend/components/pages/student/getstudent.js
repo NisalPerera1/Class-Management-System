@@ -58,18 +58,10 @@ export default function Getstudent(){
                 <td>{student.gender}</td>
                 <td>{student.age}</td>
                 <td>
-                  <Link to={`/update/${student._id}`}>
-                    <Button variant='contained' style={{ backgroundColor: 'blue', color: 'white' }}> Edit </Button>&nbsp;
-                  </Link>
-
-                  <Button
-                    variant='contained'
-                    style={{ backgroundColor: 'red', color: 'white' }}
-                    onClick={() => handleDelete(student._id)}
-                  >
-                    Delete
-                  </Button>
+                  <Link to={`/update/${student._id}`}> <Button variant='contained' style={{ backgroundColor: 'blue', color: 'white' }}>Edit</Button></Link>
+                  <Button variant='contained'style={{ backgroundColor: 'red', color: 'white' }}onClick={() => handleDelete(student._id)}> Delete</Button>
                 </td>
+
               </tr>
             ))}
           </tbody>

@@ -28,7 +28,6 @@ function App() {
         		<Route path='/papers' element={<Papers/>} />
         		<Route path='/students' element={<Getstudent/>} />
         		<Route path='/student/add' element={<Addstudent/>} />
-
 				<Route path="update/:id" element={<Editstudent />} />
 
 			</Routes>

@@ -53,7 +53,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Update a student
-router.patch('/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = ['name', 'address', 'gender', 'age'];
   const isValidUpdate = updates.every(update => allowedUpdates.includes(update));

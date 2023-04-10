@@ -1,94 +1,100 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { useNavigate, useParams } from 'react-router-dom';
+import { Form, Button } from 'react-bootstrap';
+import axios from 'axios';
+import React, { useState , useEffect} from 'react';
 
-export default function EditStudent(props) {
 
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [gender, setGender] = useState("");
-  const [age, setAge] = useState("");
+export default function Editstudent() {
+  const { id } = useParams();
+  const Navigate = useNavigate();
+
+  const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
+  const [gender, setGender] = useState('');
+  const [age, setAge] = useState('');
 
   useEffect(() => {
-    const fetchStudents = async () => {
-    const result = await axios.get(`http://localhost:8070/student/${props.match.params.id}`)
-    const { student } = result.data;
-        setName(student.name);
-        setAddress(student.address);
-        setAge(student.age);
-        setGender(student.gender);
-      };
-
-      fetchStudents();
-    }, [props.match.params.id]);
- 
-
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    const updatedStudent = {
-      name,
-      address,
-      age,
-      gender,
+    const fetchStudent = async () => {
+      const response = await axios.get(`http://localhost:8070/students/${id}`);
+      setName(response.data.name);
+      setAddress(response.data.address);
+      setGender(response.data.gender);
+      setAge(response.data.age);
     };
-    
-    axios
-      .put(`http://localhost:8070/Student/update/${props.match.params.id}`, updatedStudent)
-      .then(() => {
-        alert("Student updated in the database");
-      })
-      .catch(() => {
-        alert("Sorry, Student update failed");
-      });
+    fetchStudent();
+  }, [id]);
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    const student = {
+      name: name,
+      address: address,
+      gender: gender,
+      age: age,
+    };
+
+    try {
+      await axios.put(`http://localhost:8070/students/${id}`, student);
+      Navigate.push('/');
+    } catch (err) {
+alert("updated");
+Navigate.push('/'); // Navigate back to student UI
+
+
+}
   };
 
   return (
     <div>
-      <form className="container" onSubmit={handleFormSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="name"
+      <h3>Edit Student Details</h3>
+      <Form onSubmit={handleFormSubmit}>
+        <Form.Group controlId='name'>
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Enter Name'
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="address">Address</label>
-          <input
-            type="text"
-            className="form-control"
-            id="address"
+        </Form.Group>
+
+        <Form.Group controlId='address'>
+          <Form.Label>Address</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Enter Address'
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="age">Age</label>
-          <input
-            type="text"
-            className="form-control"
-            id="age"
+        </Form.Group>
+
+        <Form.Group controlId='gender'>
+          <Form.Label>Gender</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='gender'
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+          >
+            
+          </Form.Control>
+        </Form.Group>
+
+        <Form.Group controlId='age'>
+          <Form.Label>Age</Form.Label>
+          <Form.Control
+            type='number'
+            placeholder='Enter Age'
             value={age}
             onChange={(e) => setAge(e.target.value)}
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="gender">Gender</label>
-          <input
-            type="text"
-            className="form-control"
-            id="gender"
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
-          />
-        </div>
-        <br />
-        <button type="submit" className="btn btn-primary">
-          Update
-        </button>
-      </form>
+        </Form.Group>
+<br></br>
+        <Button variant='primary' type='submit'> Submit</Button>&nbsp;
+        <Button variant='danger' href='/students'> Back</Button>
+
+      </Form>
     </div>
   );
 }

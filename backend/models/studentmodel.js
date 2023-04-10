@@ -16,7 +16,7 @@ id: mongoose.Schema.Types.String,
         required: true
     },
     age: {
-        type: Number,
+        type: String,
         required: true
     },
     gender: {
