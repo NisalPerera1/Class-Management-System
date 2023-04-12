@@ -8,6 +8,7 @@ const PORT = 8070;
 
 const studentRouter = require('./routes/students');
 const paperRouter = require('./routes/papers');
+const UserRouter = require('./routes/registration');
 
 const URL = 'mongodb+srv://NisalPerera2:Nisal12345@stumansys.bwxtcl1.mongodb.net/?retryWrites=true&w=majority';
 
@@ -24,6 +25,7 @@ app.use(cors());
 
 app.use('/students', studentRouter);
 app.use('/papers', paperRouter);
+app.use('/users', UserRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

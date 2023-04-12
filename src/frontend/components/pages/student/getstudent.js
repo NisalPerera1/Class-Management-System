@@ -1,9 +1,12 @@
+import Fab from '@mui/material/Fab';
 import React from "react";
 import "./getstu.css"
 import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 import { Button } from "react-bootstrap";
 import axios from "axios";
+import AddIcon from '@mui/icons-material/Add';
+
 
 export default function Getstudent(){
     const [students, setStudents] = useState([]);
@@ -31,7 +34,8 @@ export default function Getstudent(){
         <div>
 
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh' }}>
-        <a href="student/add" className="btn-Modal btn-primary">Add New Student</a>        
+        <a href="student/add" className="btn-Modal btn-primary">Add New Student</a>  &nbsp;
+        <Fab color="primary" aria-label="add" href="student/add"><AddIcon /></Fab>      
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh' }}>

@@ -8,10 +8,14 @@ import Home from './frontend/components/pages/home/home';
 import Getstudent from './frontend/components/pages/student/getstudent';
 import Addstudent from './frontend/components/pages/student/createstudent';
 import Editstudent from './frontend/components/pages/student/editstudent';
-
+import Register from './frontend/components/pages/login/registration'; 
+import Login from './frontend/components/pages/login/Login';
 import Contact from './frontend/components/pages/contact/contact';
 import About from './frontend/components/pages/about/about';
 import Papers from './frontend/components/pages/papers/SelectGrade'
+
+
+
 
 function App() {
   return (
@@ -21,7 +25,9 @@ function App() {
     <Router>
 			<Navbar align="center"/>
 			<Routes>
-				<Route path='/' exact element={<Home/>} />
+				<Route path='/register' element={<Register/>} />
+				<Route path='/' exact element={<Login/>} />
+				<Route path='/home'  element={<Home/>} />
 				<Route path='/about' element={<About/>} />
 				<Route path='/classes' element={<Classes/>} />
 				<Route path='/contact' element={<Contact/>} />
